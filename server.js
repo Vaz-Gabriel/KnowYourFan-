@@ -1,37 +1,3 @@
-require('dotenv').config();
-const express = require('express');
-const multer = require('multer');
-const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
-const pdfParse = require('pdf-parse');
-const axios = require('axios');
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
-
-// Cria a pasta de uploads se não existir
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir);
-}
-
-// Configuração do Multer para upload de PDF
-const storage = multer.diskStorage({
-    destination: uploadDir,
-    filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
-});
-const upload = multer({
-    storage,
-    fileFilter: (req, file, cb) => {
-        if (file.mimetype !== 'application/pdf') {
-            return cb(new Error('Apenas arquivos PDF são permitidos.'));
-        }
-        cb(null, true);
-    }
-});
-
 // Endpoint para receber e analisar o PDF
 app.post('/api/analisar-pdf', upload.single('pdf'), async (req, res) => {
     const cpfInformado = req.body.cpf;
@@ -55,6 +21,14 @@ app.post('/api/analisar-pdf', upload.single('pdf'), async (req, res) => {
 
         // Log do conteúdo extraído do PDF
         console.log("Texto extraído do PDF:", textoExtraido);
+
+        // Log da chave da OpenAI para depuração
+        console.log("Chave OpenAI:", process.env.OPENAI_API_KEY);
+
+        // Validação da chave da OpenAI
+        if (!process.env.OPENAI_API_KEY) {
+            throw new Error("Chave da OpenAI não definida. Verifique a configuração do ambiente.");
+        }
 
         // Chamada à API da OpenAI com CPF e texto
         const openaiResponse = await axios.post(
@@ -97,6 +71,3 @@ O CPF informado aparece corretamente no documento?`
         });
     }
 });
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
