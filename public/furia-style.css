@@ -1,0 +1,172 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do corpo da página */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #FFD700;
+}
+
+/* Container do logotipo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Estilização do logotipo */
+.furia-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgb(255, 217, 0));
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Subtítulo/descrição */
+p {
+    font-size: 1rem;
+    color: #BBBBBB;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Seções do formulário */
+.form-section {
+    margin-bottom: 30px;
+}
+
+/* Títulos das seções */
+.form-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Sublinhado laranja nos títulos */
+.form-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50%;
+    height: 3px;
+    background: #FFD700;
+}
+
+/* Estilização dos inputs e textareas */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: whitesmoke;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #0A0A0A;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: whitesmoke;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Placeholder */
+input::placeholder, textarea::placeholder {
+    color: #888888;
+}
+
+/* Estilização do botão */
+button {
+    width: 100%;
+    padding: 15px;
+    background: #FFD700;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #D4AF37;
+}
+
+/* Mensagens de validação */
+#documentValidation, #socialMediaValidation, #esportsProfileValidation {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.valid {
+    color: #00FF00;
+}
+
+.invalid {
+    color: #FF0000;
+}
+
+/* Resultados */
+.results {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid #FFD700;
+}
+
+.results h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+
+.results p {
+    font-size: 1rem;
+    color: #BBBBBB;
+    text-align: left;
+}
+
+/* Classe para exibir os resultados */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowYourFanApp - Conheça Seu Fã de E-sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="furia-style.css">
+    <!-- Biblioteca PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="furia-logo.png" alt="Logotipo da FURIA eSports" class="furia-logo">
+        </div>
+        <h1>KnowYourFanApp</h1>
+        <p>Colete e valide dados de fãs de e-sports</p>
+
+        <form id="fanForm">
+            <div class="form-section">
+                <h2>Dados Pessoais</h2>
+                <input id="name" type="text" placeholder="Nome completo" required>
+                <input id="endereco" type="text" placeholder="Endereço" required>
+                <input id="cpf" type="text" placeholder="CPF (ex.: 123.456.789-00)" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Interesses em E-sports (Último Ano)</h2>
+                <textarea id="interesses" placeholder="Jogos favoritos" rows="2" required></textarea>
+                <textarea id="eventos" placeholder="Eventos assistidos" rows="2" required></textarea>
+                <textarea id="compras" placeholder="Compras relacionadas" rows="2" required></textarea>
+            </div>
+
+            <div class="form-section">
+                <h2>Upload de Documento</h2>
+                <input type="file" id="pdf-upload" accept="application/pdf" />
+                <button type="button" onclick="processarPdf()">Analisar PDF</button>
+                <div id="resultado" style="margin-top: 10px;"></div>
+            </div>
+
+            <div class="form-section">
+                <h2>Vincular Redes Sociais</h2>
+                <input id="socialMedia" type="text" placeholder="Link do Twitter ou Instagram" required>
+                <p id="socialMediaValidation"></p>
+            </div>
+
+            <div class="form-section">
+                <h2>Perfil de E-sports</h2>
+                <input id="esportsProfile" type="text" placeholder="Link do perfil (HLTV ou Liquipedia)" required>
+                <p id="esportsProfileValidation"></p>
+            </div>
+
+            <button type="submit">Enviar Dados</button>
+        </form>
+
+        <div id="results" class="results hidden">
+            <h2>Resumo do Perfil</h2>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <script src="dados.js"></script>
+</body>
+</html>
