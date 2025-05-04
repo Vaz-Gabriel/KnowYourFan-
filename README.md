@@ -1,14 +1,18 @@
-# 🧠 KnowYourFanApp
+# 🧠 KnowYourFan
 
-**KnowYourFanApp** é uma aplicação web criada para coletar e validar dados de fãs de e-sports (tema: FURIA eSports). O objetivo é verificar se o CPF informado por um fã está presente no conteúdo de um documento escaneado enviado em PDF.
+**KnowYourFan** é uma aplicação web criada para coletar e validar dados de fãs de e-sports. O objetivo é verificar se o CPF informado por um fã está presente no conteúdo de um documento escaneado enviado em PDF.
 
 ## 🚀 Funcionalidades
 
-- Formulário de envio com CPF e arquivo PDF
-- Validação de documentos com suporte a OCR via OpenAI
-- Interface personalizada com a identidade da FURIA eSports
-- Extração de texto de PDFs usando `pdf-parse`
-- Upload seguro com `Multer`
+- ✅ Formulário de envio com CPF e arquivo PDF
+  
+- ✅ Validação de documentos com suporte a OCR via OpenAI
+  
+- ✅ Interface personalizada com a identidade da FURIA eSports
+  
+- ✅ Extração de texto de PDFs usando `pdf-parse`
+  
+- ✅ Upload seguro com `Multer`
 
 ---
 
@@ -32,18 +36,23 @@
 ## 📁 Estrutura de Pastas
 
 ```
-KNOWYOURFANAPP/
-├── knowyourfan-backend/
-│   ├── server.js
-│   ├── .env
-│   ├── package.json
-|   ├── package-lock.json
-│   ├── /uploads
-│   └── /public
-│       ├── index.html
-│       ├── furia-style.css
-│       ├── dados.js
-|       ├── furia-logo.png
+KNOWYOURFAN-MAIN/
+├─ /node_modules
+├─ /public
+│    ├── index.html
+│    ├── furia-style.css
+│    ├── dados.js
+|    └── furia-logo.png
+├─ /uploads
+|  ├── .env
+|  ├── .env.example
+|  ├── .gitignore
+|  ├── package-lock.json
+|  ├── package.json
+|  ├── README.md
+|  └── server.js
+
+
 ```
 ---
 
@@ -52,7 +61,7 @@ KNOWYOURFANAPP/
 ### 1. Clone o projeto
 
 ```bash
-git clone https://github.com/VAZ-GABRIEL/KNOWYOURFAN.git
+git clone https://github.com/Vaz-Gabriel/KnowYourFan-.git
 
 ```
 
@@ -79,6 +88,12 @@ node server.js
 
 ```
 http://localhost:3000
+```
+
+### 6. Acesso pelo Servidor Web
+
+```
+https://knowyourfan-hfhe.onrender.com
 ```
 
 ---
